@@ -9,6 +9,8 @@
     --fill-disabled: #20222c;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body {
     background-color: #0f111a;
     color: white;
@@ -16,6 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: 'Inter', Segoe UI, sans-serif;
 }
 
 .container {
@@ -50,9 +53,10 @@ body {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(-50%);
-    
+    transform: translateY(-50%);    
     z-index: -1;
+    animation: ease-in;
+    transition: 0.5s;
 }
 
 .checkpoint {
@@ -64,11 +68,15 @@ body {
     border-radius: 50%;
     height: 32px;
     width: 32px;
+    font-size: small;
+    transition: 0.2s ease;
 }
 
 .checkpoint.active {
     border-color: var(--fill-active);
 }
+
+
 
 .btn {
     background-color: var(--fill-active);
@@ -79,10 +87,19 @@ body {
     padding: 0.7em 1.5em;
     margin: 0 10px;    
     cursor: pointer;
+    font-family: inherit;
 }
 
 .btn:disabled {  
     background-color: var(--fill-disabled);
     color: var(--fill-not-active);
     cursor: not-allowed;
+}
+
+.btn:focus {
+    border: 0;
+}
+
+.btn:active {
+    transform: scale(0.95);
 }
