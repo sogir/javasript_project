@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #0f111a;
+    color:White;
+}
+
+
+.main-wrapper {
+    width: 100vw;
+    
+    display: grid;
+    justify-content: center;
+}
+
+.description-header {
+    font-family: 'Lexend Giga', sans-serif;
+    text-align: center;
+    max-width: 80vw;
+    margin: 6vh 0 4vh 0;
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+
+h1 > .js-gradient {
+    animation: background-pan 2s linear infinite;
+    background: linear-gradient(to right, red, orange, yellow, orange, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 200%;
+}
+
+ol {
+    padding: 0;     
+    font-family: 'Lexend', sans-serif;
+}
+
+.li-wrapper-box {
+    
+    max-width: 80vw;
+    padding: 10px 0;
+    background-color: #ffffff10;
+    border-radius: 5px;
+
+}
+
+a {
+    text-decoration: none;    
+    color:White;
+    margin-left: 10px;
+
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #42a5f5;
+
+}
+
+li {
+    list-style: lower-roman;
+    margin-left: 50px;
+}
+
+li::marker {
+    color: #ffffff30;
+}
+
+footer {
+    display: grid;
+    justify-content: center;
+}
+
+.line-before-footer {
+    width: 30vw;
+    min-width: 260px;
+    border-color: #ffffff30;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+p.copyright-info {
+    
+    color: #ffffff30;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, sans-serif;
+    font-size: 1rem;
+}
