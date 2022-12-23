@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+:root {
+    --fill-active: #43acf2;
+    --fill-not-active: #525975;
+    --fill-disabled: #20222c;
+}
+
 body {
     background-color: #0f111a;
     color: white;
@@ -27,7 +33,7 @@ body {
 
 .progress-container::before {
     content: '' ;
-    background-color: #525975;
+    background-color: var(--fill-not-active);
     height: 3px;
     width: 100%;
     position: absolute;
@@ -38,9 +44,9 @@ body {
 }
 
 .progress {
-    background-color:#43acf2;
+    background-color:var(--fill-active);
     height: 3px;
-    width: 33%;
+    width: 0%;
     position: absolute;
     top: 50%;
     left: 0;
@@ -50,22 +56,22 @@ body {
 }
 
 .checkpoint {
-    background-color: #20222c;
+    background-color: var(--fill-disabled);
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #525975;
+    border: 2px solid var(--fill-not-active);
     border-radius: 50%;
     height: 32px;
     width: 32px;
 }
 
 .checkpoint.active {
-    border-color: #43acf2;
+    border-color: var(--fill-active);
 }
 
 .btn {
-    background-color: #43acf2;
+    background-color: var(--fill-active);
     color: white;
     font-size: 0.9em;
     border: 0;
@@ -76,7 +82,7 @@ body {
 }
 
 .btn:disabled {  
-    background-color: #20222c;
-    color: #525975;
+    background-color: var(--fill-disabled);
+    color: var(--fill-not-active);
     cursor: not-allowed;
 }
