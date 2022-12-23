@@ -25,11 +25,25 @@ body {
     text-align: center;
 }
 
+.slide {
+    display: none;
+    font-size: 2.2rem;
+}
+
+.slide.onn {
+    display: block;
+}
+
+.onn {    
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
 .progress-container {
     display: flex;
     justify-content: space-between;
     width: 500px;
     max-width: 95vw;
+    margin-top: 50px;
     margin-bottom: 50px;
     position: relative;
 }

@@ -2,6 +2,7 @@ const checkpoints = document.querySelectorAll('.checkpoint')
 const progress = document.getElementById('progress')
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
+const textSlide = document.querySelectorAll('.slide')
 
 let currentActive = 1
 
@@ -11,6 +12,7 @@ next.addEventListener('click', () => {
         currentActive = checkpoints.length
     }
     update()
+    slideRight()
 })
 
 prev.addEventListener('click', () => {
@@ -19,6 +21,7 @@ prev.addEventListener('click', () => {
         currentActive = 1
     }
     update()
+    slideLeft()
 })
 
 function update() {
@@ -26,7 +29,8 @@ function update() {
         if (idx < currentActive) {
             checkpoint.classList.add('active')
         } else {
-            checkpoint.classList.remove('active')
+            checkpoint.classList.remove('active')       
+            
         }
     });
     
@@ -41,4 +45,16 @@ function update() {
         prev.disabled = false
         next.disabled = false
     }
+}
+
+function slideRight() {    
+    textSlide[currentActive - 1 ].classList.add('onn')
+    textSlide[currentActive - 2 ].classList.remove('onn')
+}
+
+function slideLeft() {    
+    textSlide[currentActive - 1 ].classList.add('onn')
+    textSlide[currentActive].classList.remove('onn')
+    textSlide[currentActive + 1 ].classList.remove('onn')
+    textSlide[currentActive + 2 ].classList.remove('onn')
 }
