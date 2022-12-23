@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #0f111a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    max-width: 95vw;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.progress-container::before {
+    content: '' ;
+    background-color: #525975;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.progress {
+    background-color:#43acf2;
+    height: 3px;
+    width: 33%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    
+    z-index: -1;
+}
+
+.checkpoint {
+    background-color: #20222c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #525975;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+}
+
+.checkpoint.active {
+    border-color: #43acf2;
+}
+
+.btn {
+    background-color: #43acf2;
+    color: white;
+    font-size: 0.9em;
+    border: 0;
+    border-radius: 5px;
+    padding: 0.7em 1.5em;
+    margin: 0 10px;    
+    cursor: pointer;
+}
+
+.btn:disabled {  
+    background-color: #20222c;
+    color: #525975;
+    cursor: not-allowed;
+}
